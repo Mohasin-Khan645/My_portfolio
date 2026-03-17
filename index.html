@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MK — Mohasin </title>
+    <meta
+      name="description"
+      content="Mohammad Mohasin Khan — Frontend Developer & DevOps Enthusiast. Premium portfolio with projects, skills, experience, services, achievements, and contact."
+    />
+    <meta name="author" content="Mohammad Mohasin Khan" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <meta property="og:title" content="MK — Frontend Developer & DevOps Enthusiast" />
+    <meta
+      property="og:description"
+      content="Passionate about building modern web applications and exploring DevOps automation, cloud technologies, and scalable systems."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+
+    <!-- Page loader -->
+    <div id="page-loader" aria-hidden="true">
+      <div class="loader-card" role="status" aria-label="Loading">
+        <div class="loader-logo" aria-hidden="true">MK</div>
+        <div class="loader-bar" aria-hidden="true">
+          <span class="loader-bar__fill"></span>
+        </div>
+        <p class="loader-text">Loading experience…</p>
+      </div>
+    </div>
+
+    <!-- Cursor glow -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true">
+      <div id="scroll-progress-bar"></div>
+    </div>
+
+    <!--  social sidebar -->
+    <aside class="social-rail" aria-label="Social links">
+      <a class="social-rail__link" href="#" data-social="github" aria-label="GitHub" title="GitHub" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 2C6.477 2 2 6.614 2 12.307c0 4.554 2.865 8.414 6.839 9.777.5.096.682-.225.682-.498 0-.246-.01-1.06-.014-1.92-2.782.62-3.369-1.23-3.369-1.23-.454-1.189-1.11-1.505-1.11-1.505-.908-.648.069-.635.069-.635 1.004.073 1.532 1.063 1.532 1.063.892 1.575 2.341 1.12 2.912.856.091-.669.349-1.12.635-1.377-2.221-.264-4.556-1.147-4.556-5.103 0-1.127.389-2.048 1.03-2.77-.104-.262-.446-1.318.098-2.746 0 0 .84-.276 2.75 1.058A9.265 9.265 0 0 1 12 6.844c.84.004 1.685.12 2.475.352 1.909-1.334 2.748-1.058 2.748-1.058.545 1.428.203 2.484.1 2.746.64.722 1.028 1.643 1.028 2.77 0 3.966-2.339 4.836-4.566 5.095.359.318.678.942.678 1.9 0 1.372-.012 2.477-.012 2.814 0 .276.18.6.688.498C19.137 20.716 22 16.86 22 12.307 22 6.614 17.523 2 12 2z"
+          />
+        </svg>
+      </a>
+      <a class="social-rail__link" href="#" data-social="linkedin" aria-label="LinkedIn" title="LinkedIn" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.94v5.666H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.6 0 4.265 2.37 4.265 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zM6.81 20.452H3.863V9H6.81v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"
+          />
+        </svg>
+      </a>
+      <a class="social-rail__link" href="#" data-social="twitter" aria-label="Twitter/X" title="Twitter/X" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M18.244 2H21.6l-7.33 8.383L22.9 22h-6.77l-5.3-6.917L4.78 22H1.4l7.84-8.96L1 2h6.94l4.79 6.322L18.244 2zm-1.18 18h1.86L6.91 3.88H4.92L17.064 20z"
+          />
+        </svg>
+      </a>
+      <a class="social-rail__link" href="#" data-social="instagram" aria-label="Instagram" title="Instagram" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.2A4.8 4.8 0 1 1 7.2 12 4.81 4.81 0 0 1 12 7.2zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2zM17.6 6.4a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"
+          />
+        </svg>
+      </a>
+      <a class="social-rail__link" href="#" data-social="facebook" aria-label="Facebook" title="Facebook" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"
+          />
+        </svg>
+      </a>
+    </aside>
+
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__logo" href="#home" aria-label="Go to home">
+          <span class="nav__logoMark" aria-hidden="true">MK</span>
+          <span class="nav__logoText">Mohasin Khan</span>
+        </a>
+
+        <div class="nav__menu" id="navMenu">
+          <div class="nav__links" aria-label="Sections">
+            <a class="nav__link is-active" href="#home">Home</a>
+            <a class="nav__link" href="#about">About</a>
+            <a class="nav__link" href="#skills">Skills</a>
+            <a class="nav__link" href="#experience">Experience</a>
+            <a class="nav__link" href="#projects">Projects</a>
+            <a class="nav__link" href="#services">Services</a>
+            <a class="nav__link" href="#achievements">Achievements</a>
+            <a class="nav__link" href="#contact">Contact</a>
+          </div>
+
+          <div class="nav__actions">
+            <button class="icon-btn" id="cmdkBtn" type="button" aria-label="Open command palette (Ctrl/⌘ K)">
+              <svg class="icon-btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10 6h10v2H10V6zM10 11h10v2H10v-2zM10 16h10v2H10v-2zM4 7a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm2 0a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm-2 5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm2 0a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm-2 5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm2 0a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"
+                />
+              </svg>
+            </button>
+            <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+              <svg class="icon-btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0 4a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1zM12 4a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1zM4 13H3a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2zm18 0h-1a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2zM6.22 7.64a1 1 0 0 1-1.41 0L4.1 6.93a1 1 0 1 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41zm13.68 13.68a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41zM19.9 6.93l-.71.71a1 1 0 0 1-1.41-1.41l.71-.71a1 1 0 1 1 1.41 1.41zM6.22 20.61l-.71.71a1 1 0 0 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 1.41z"
+                />
+              </svg>
+            </button>
+<a class="btn btn--ghost" href="javascript:void(0)" data-open-resume>Resume</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="mainContent">
+      <!-- Hero -->
+      <section id="home" class="hero">
+        <canvas id="particles" aria-hidden="true"></canvas>
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow">Hi, I’m</p>
+            <h1 class="hero__title">
+              Mohammad <span class="gradient-text">Mohasin Khan</span>
+            </h1>
+            <p class="hero__subtitle">
+              <span class="mono">▸</span>
+              <span id="typing" class="typing" aria-label="Rotating titles"></span>
+            </p>
+            <p class="hero__desc">
+              Passionate about building modern web applications and exploring DevOps automation, cloud technologies, and
+              scalable systems.
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#projects">View Projects</a>
+<a class="btn btn--secondary" href="javascript:void(0)" data-open-resume>View Resume</a>
+              <a class="btn btn--ghost" href="#contact">Contact Me</a>
+            </div>
+
+            <div class="hero__badges" aria-label="Quick highlights">
+              <span class="pill"><span class="pill__dot"></span>Frontend</span>
+              <span class="pill pill--alt"><span class="pill__dot"></span>DevOps</span>
+              <span class="pill pill--code"><span class="mono">{ }</span>Vanilla JS</span>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="profile">
+              <div class="profile__ring" aria-hidden="true"></div>
+              <div class="profile__inner">
+                <img
+                  class="profile__img"
+                  src="./assets/images/Mohasin_profile.jpeg"
+                  alt="Mohammad Mohasin Khan"
+                  width="560"
+                  height="560"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+                <span class="profile__initials" aria-hidden="true">MK</span>
+              </div>
+            </div>
+
+            <div class="hero__cards" aria-label="Highlights">
+              <article class="mini-card reveal">
+                <p class="mini-card__label">Focus</p>
+                <p class="mini-card__value">UI engineering + automation</p>
+              </article>
+              <article class="mini-card reveal">
+                <p class="mini-card__label">Stack</p>
+                <p class="mini-card__value"><span class="mono">HTML · CSS · JS · Docker · Git</span></p>
+              </article>
+              <article class="mini-card reveal">
+                <p class="mini-card__label">Availability</p>
+                <p class="mini-card__value">Open to internships & roles</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="section__title">About</h2>
+            <p class="section__kicker">A builder mindset with a systems edge.</p>
+          </div>
+
+          <div class="about">
+            <div class="about__text reveal">
+              <p>
+                I’m Mohammad Mohasin Khan — a Frontend Developer and DevOps Enthusiast focused on crafting clean,
+                performance-first interfaces and learning how modern systems ship reliably at scale.
+              </p>
+              <p>
+                I enjoy building responsive experiences, refining UI details, and exploring automation with Docker, CI/CD,
+                and cloud fundamentals. I’m always learning, iterating, and pushing for better engineering quality.
+              </p>
+
+              <div class="about__chips" aria-label="Interests">
+                <span class="chip">Modern UI</span>
+                <span class="chip">Performance</span>
+                <span class="chip">Accessibility</span>
+                <span class="chip">DevOps Automation</span>
+                <span class="chip">Cloud Basics</span>
+              </div>
+            </div>
+
+            <div class="stats reveal" aria-label="Statistics">
+              <div class="stat">
+                <div class="stat__num" data-counter data-target="10"></div>
+                <div class="stat__label">Projects Completed</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num" data-counter data-target="32">0</div>
+                <div class="stat__label">Technologies Learned</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num" data-counter data-target="25">0</div>
+                <div class="stat__label">GitHub Repositories</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num" data-counter data-target="3">0</div>
+                <div class="stat__label">Years Learning</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section section--alt">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="section__title">Skills</h2>
+            <p class="section__kicker">A practical toolkit across frontend and DevOps foundations.</p>
+          </div>
+
+          <div class="filters reveal" aria-label="Skill filters">
+            <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" type="button" data-filter="programming">Programming</button>
+            <button class="filter-btn" type="button" data-filter="backend">Backend</button>
+            <button class="filter-btn" type="button" data-filter="devops">DevOps</button>
+          </div>
+
+          <div class="skill-grid" id="skillGrid">
+            <!-- Frontend -->
+            <article class="skill-card reveal" data-skill data-category="frontend">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 4h18v3H3V4zm0 6h18v3H3v-3zm0 6h18v3H3v-3z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">HTML</h3>
+                  <p class="skill-card__meta"><span class="mono">Semantic · SEO · A11y</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="HTML proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 90%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="frontend">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 4h16v4H4V4zm0 6h10v4H4v-4zm0 6h16v4H4v-4z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">CSS</h3>
+                  <p class="skill-card__meta"><span class="mono">Grid · Flex · Animations</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="CSS proficiency" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 88%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="frontend">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l9 4.5v11L12 22 3 17.5v-11L12 2zm0 2.2L5 7v9.6l7 3.2 7-3.2V7l-7-2.8z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">JavaScript</h3>
+                  <p class="skill-card__meta"><span class="mono">DOM · APIs · Performance</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="JavaScript proficiency" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 84%"></span>
+              </div>
+            </article>
+
+            <!-- Programming -->
+            <article class="skill-card reveal" data-skill data-category="programming">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7h3l-5-7 5-7H8zm8 0h-3l5 7-5 7h3l5-7-5-7z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">Python</h3>
+                  <p class="skill-card__meta"><span class="mono">Scripting · Automation</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="Python proficiency" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 72%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="programming">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 3h10v4H7V3zm-2 6h14v12H5V9zm3 3v2h8v-2H8z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">Java</h3>
+                  <p class="skill-card__meta"><span class="mono">OOP · Fundamentals</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="Java proficiency" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 66%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="programming">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l10 6v8l-10 6L2 16V8l10-6zm0 4.1L6 9v6l6 2.9 6-2.9V9l-6-2.9z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">C</h3>
+                  <p class="skill-card__meta"><span class="mono">DSA · Low-level basics</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="C proficiency" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 58%"></span>
+              </div>
+            </article>
+
+            <!-- Backend -->
+            <article class="skill-card reveal" data-skill data-category="backend">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 6h16v4H4V6zm0 8h16v4H4v-4zm3-6h2v2H7V8zm0 8h2v2H7v-2z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">Node.js</h3>
+                  <p class="skill-card__meta"><span class="mono">APIs · Tooling</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="Node.js proficiency" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 62%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="backend">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3c-4.4 0-8 1.8-8 4v10c0 2.2 3.6 4 8 4s8-1.8 8-4V7c0-2.2-3.6-4-8-4zm0 2c3.6 0 6 .9 6 2s-2.4 2-6 2-6-.9-6-2 2.4-2 6-2zm0 14c-3.6 0-6-.9-6-2v-2c1.5 1 3.9 1.6 6 1.6s4.5-.6 6-1.6v2c0 1.1-2.4 2-6 2zm0-6c-3.6 0-6-.9-6-2V9c1.5 1 3.9 1.6 6 1.6S16.5 10 18 9v2c0 1.1-2.4 2-6 2z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">MySQL</h3>
+                  <p class="skill-card__meta"><span class="mono">Queries · Schema basics</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="MySQL proficiency" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 60%"></span>
+              </div>
+            </article>
+
+            <!-- DevOps -->
+            <article class="skill-card reveal" data-skill data-category="devops">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 7h10v10H7V7zm-4 4h3v2H3v-2zm15 0h3v2h-3v-2zM11 3h2v3h-2V3zm0 15h2v3h-2v-3z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">Docker</h3>
+                  <p class="skill-card__meta"><span class="mono">Containers · Images</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="Docker proficiency" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 70%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="devops">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l7 4v12l-7 4-7-4V6l7-4zm-1 6v2H8v2h3v2H8v2h3v2h2v-2h3v-2h-3v-2h3v-2h-3V8h-2z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">Git</h3>
+                  <p class="skill-card__meta"><span class="mono">Workflow · Branching</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="Git proficiency" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 74%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="devops">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v8h12V8H6zm2 1h4v2H8V9zm0 3h8v2H8v-2z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">Linux</h3>
+                  <p class="skill-card__meta"><span class="mono">CLI · Basics</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="Linux proficiency" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 65%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="devops">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 4h10v3H7V4zm-3 6h16v10H4V10zm3 3v4h4v-4H7zm6 0v4h4v-4h-4z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">CI/CD</h3>
+                  <p class="skill-card__meta"><span class="mono">Pipelines · Automation</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="CI/CD proficiency" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 55%"></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal" data-skill data-category="devops">
+              <div class="skill-card__top">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 19a4 4 0 0 1 0-8 5 5 0 0 1 9.7-1.5A4.5 4.5 0 1 1 17.5 19H6zm5-7h2v3h3v2h-5v-5z" /></svg>
+                </div>
+                <div>
+                  <h3 class="skill-card__title">Cloud Basics</h3>
+                  <p class="skill-card__meta"><span class="mono">Concepts · Deployment</span></p>
+                </div>
+              </div>
+              <div class="meter" role="progressbar" aria-label="Cloud basics proficiency" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                <span class="meter__fill" style="--value: 50%"></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience / Education  -->
+      <section id="experience" class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="section__title">Education</h2>
+            <p class="section__kicker">Learning path and qualifications.</p>
+          </div>
+
+          <div class="timeline" aria-label="Education timeline">
+            <div class="timeline__line" aria-hidden="true"></div>
+
+            <article class="timeline__item reveal">
+              <div class="timeline__node" aria-hidden="true"></div>
+              <div class="timeline__card">
+                <h3 class="timeline__title">B.Tech — Computer Science</h3>
+                <p class="timeline__org">Sri Venkateswara College of Engineering and Technology</p>
+                <p class="timeline__desc">Building strong fundamentals in software engineering, systems, and web development.</p>
+              </div>
+            </article>
+
+            <article class="timeline__item reveal">
+              <div class="timeline__node" aria-hidden="true"></div>
+              <div class="timeline__card">
+                <h3 class="timeline__title">Intermediate</h3>
+                <p class="timeline__org">Tilottama Campus</p>
+                <p class="timeline__desc">Focused on mathematics, science, and consistent problem solving.</p>
+              </div>
+            </article>
+
+            <article class="timeline__item reveal">
+              <div class="timeline__node" aria-hidden="true"></div>
+              <div class="timeline__card">
+                <h3 class="timeline__title">School</h3>
+                <p class="timeline__org">Evergreen English Boarding School</p>
+                <p class="timeline__desc">Early foundation in computing, communication, and curiosity-driven learning.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section section--alt">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="section__title">Projects</h2>
+            <p class="section__kicker">Selected work with clean UX and strong foundations.</p>
+          </div>
+
+          <div class="filters reveal" aria-label="Project filters">
+            <button class="filter-btn is-active" type="button" data-project-filter="all">All</button>
+            <button class="filter-btn" type="button" data-project-filter="frontend">Frontend</button>
+            <button class="filter-btn" type="button" data-project-filter="backend">Backend</button>
+            <button class="filter-btn" type="button" data-project-filter="devops">DevOps</button>
+          </div>
+
+          <div class="project-grid" id="projectGrid">
+            <article class="project-card reveal" data-project data-category="backend" data-project-key="houseRental" tabindex="0">
+              <div class="project-card__media" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">House Rental Management System</h3>
+                <p class="project-card__desc">Listings, tenant workflows, and clean admin dashboards for managing rentals.</p>
+                <div class="tags" aria-label="Tech stack">
+                  <span class="tag">Java</span><span class="tag">Mongos</span><span class="tag">Java Swing</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary btn--sm" href="#" data-project-link="houseRental.demo">Live Demo</a>
+                  <a class="btn btn--ghost btn--sm" href="https://github.com/Mohasin-Khan645/HouseRentalSystem" data-project-link="houseRental.code">View Code</a>
+                  <button class="btn btn--ghost btn--sm" type="button" data-project-open="houseRental">Case Study</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project data-category="frontend" data-project-key="ecommerce" tabindex="0">
+              <div class="project-card__media project-card__media--alt" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">E-commerce Website</h3>
+                <p class="project-card__desc">Responsive storefront UI with product browsing, cart flow, and polished details.</p>
+                <div class="tags" aria-label="Tech stack">
+                  <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary btn--sm" href="https://mohasin-khan645.github.io/Ecommerce-Website/" data-project-link="ecommerce.demo">Live Demo</a>
+                  <a class="btn btn--ghost btn--sm" href="https://github.com/Mohasin-Khan645/Ecommerce-Website" data-project-link="ecommerce.code">View Code</a>
+                  <button class="btn btn--ghost btn--sm" type="button" data-project-open="ecommerce">Case Study</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project data-category="frontend" data-project-key="weather" tabindex="0">
+              <div class="project-card__media" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Weather App</h3>
+                <p class="project-card__desc">Fast, minimal UI with geolocation, search, and clean weather visualizations.</p>
+                <div class="tags" aria-label="Tech stack">
+                  <span class="tag">JavaScript</span><span class="tag">APIs</span><span class="tag">Html</span><span class="tag">CSS</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary btn--sm" href="https://mohasin-khan645.github.io/Weather_app/" data-project-link="weather.demo">Live Demo</a>
+                  <a class="btn btn--ghost btn--sm" href="https://github.com/Mohasin-Khan645/Weather_app" data-project-link="weather.code">View Code</a>
+                  <button class="btn btn--ghost btn--sm" type="button" data-project-open="weather">Case Study</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project data-category="backend" data-project-key="taskflow" tabindex="0">
+              <div class="project-card__media project-card__media--alt" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">TaskFlow API</h3>
+                <p class="project-card__desc">RESTful task management API with authentication-ready architecture.</p>
+                <div class="tags" aria-label="Tech stack">
+                  <span class="tag">JavaScript</span><span class="tag">MySQL</span><span class="tag">Docker</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary btn--sm" href="#" data-project-link="taskflow.demo">Live Demo</a>
+                  <a class="btn btn--ghost btn--sm" href="https://github.com/Mohasin-Khan645/Taskflow-API" data-project-link="taskflow.code">View Code</a>
+                  <button class="btn btn--ghost btn--sm" type="button" data-project-open="taskflow">Case Study</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project data-category="devops" data-project-key="medical" tabindex="0">
+              <div class="project-card__media" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Medical Management System</h3>
+                <p class="project-card__desc">Optimized flows for records, appointments, and admin dashboards with automation ideas.</p>
+                <div class="tags" aria-label="Tech stack">
+                  <span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">Linux</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary btn--sm" href="#" data-project-link="medical.demo">Live Demo</a>
+                  <a class="btn btn--ghost btn--sm" href="#" data-project-link="medical.code">View Code</a>
+                  <button class="btn btn--ghost btn--sm" type="button" data-project-open="medical">Case Study</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="github reveal" aria-label="GitHub stats" id="githubStats">
+            <div class="github__head">
+              <h3 class="github__title">GitHub Stats</h3>
+              <p class="github__sub">Auto-loaded from GitHub (public API) when your GitHub URL is set.</p>
+              <img src="https://ghchart.rshah.org/Mohasin-Khan645" alt="GitHub Contributions">
+            </div>
+            <div class="github__grid">
+              <div class="github-card" data-gh-card="followers">
+                <p class="github-card__label">Followers</p>
+                <p class="github-card__value"><span class="mono" data-gh="followers">—</span></p>
+              </div>
+              <div class="github-card" data-gh-card="repos">
+                <p class="github-card__label">Public repos</p>
+                <p class="github-card__value"><span class="mono" data-gh="repos">—</span></p>
+              </div>
+              <div class="github-card" data-gh-card="stars">
+                <p class="github-card__label">Stars (top repos)</p>
+                <p class="github-card__value"><span class="mono" data-gh="stars">—</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DevOps Lab -->
+      <section id="devops-lab" class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="section__title">DevOps Lab</h2>
+            <p class="section__kicker">Automation, containers, and shipping reliably — showcased as practical building blocks.</p>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 7h10v10H7V7zm-4 4h3v2H3v-2zm15 0h3v2h-3v-2zM11 3h2v3h-2V3zm0 15h2v3h-2v-3z" /></svg>
+              </div>
+              <h3 class="service-card__title">Dockerized workflows</h3>
+              <p class="service-card__desc">Clean local dev + reproducible builds using images, volumes, and multi-stage patterns.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 4h10v3H7V4zm-3 6h16v10H4V10zm3 3v4h4v-4H7zm6 0v4h4v-4h-4z" /></svg>
+              </div>
+              <h3 class="service-card__title">CI/CD foundations</h3>
+              <p class="service-card__desc">Automated checks, build/test steps, and deployment-ready pipelines (GitHub Actions ready).</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 19a4 4 0 0 1 0-8 5 5 0 0 1 9.7-1.5A4.5 4.5 0 1 1 17.5 19H6z" /></svg>
+              </div>
+              <h3 class="service-card__title">Cloud basics</h3>
+              <p class="service-card__desc">Deployment concepts, environment separation, and operational thinking for scalable systems.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Services -->
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="section__title">Services</h2>
+            <p class="section__kicker">What I can help build and ship.</p>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v8h12V8H6zM7 16h5v-2H7v2z" /></svg>
+              </div>
+              <h3 class="service-card__title">Web Development</h3>
+              <p class="service-card__desc">Modern responsive websites with optimized performance and polished UI details.</p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 7h10v10H7V7zm-4 4h3v2H3v-2zm15 0h3v2h-3v-2zM11 3h2v3h-2V3zm0 15h2v3h-2v-3z" /></svg>
+              </div>
+              <h3 class="service-card__title">DevOps Solutions</h3>
+              <p class="service-card__desc">CI/CD pipelines, Docker containers, automation workflows, and deployment basics.</p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 4h14v4H5V4zm0 6h14v10H5V10zm2 2v6h10v-6H7z" /></svg>
+              </div>
+              <h3 class="service-card__title">UI/UX Design</h3>
+              <p class="service-card__desc">Wireframes, responsive layouts, and modern interfaces that feel premium.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section id="achievements" class="section section--alt">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="section__title">Achievements</h2>
+            <p class="section__kicker">Certifications and milestones.</p>
+          </div>
+
+          <div class="cert-grid">
+            <article class="cert-card reveal">
+              <div class="cert-card__top">
+                <div class="cert-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 2h12v6H6V2zm0 8h12v12H6V10zm3 3v2h6v-2H9z" /></svg>
+                </div>
+                <h3 class="cert-card__title">Web Development Certification</h3>
+              </div>
+              <p class="cert-card__desc">Proof of hands-on practice in building responsive web interfaces.</p>
+            </article>
+
+            <article class="cert-card reveal">
+              <div class="cert-card__top">
+                <div class="cert-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 19a4 4 0 0 1 0-8 5 5 0 0 1 9.7-1.5A4.5 4.5 0 1 1 17.5 19H6z" /></svg>
+                </div>
+                <h3 class="cert-card__title">Cloud Fundamentals</h3>
+              </div>
+              <p class="cert-card__desc">Core concepts around cloud services, deployment, and reliability basics.</p>
+            </article>
+
+            <article class="cert-card reveal">
+              <div class="cert-card__top">
+                <div class="cert-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l7 4v12l-7 4-7-4V6l7-4zm-1 6v2H8v2h3v2H8v2h3v2h2v-2h3v-2h-3v-2h3v-2h-3V8h-2z" /></svg>
+                </div>
+                <h3 class="cert-card__title">Git & DevOps Certification</h3>
+              </div>
+              <p class="cert-card__desc">Version control workflows and automation-first development practices.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="section__title">Contact</h2>
+            <p class="section__kicker">Need a service? Send your requirement and I will receive it by email.</p>
+          </div>
+
+          <div class="contact">
+            <form class="contact__form reveal" id="contactForm" novalidate>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+                <small class="field__error" data-error-for="name" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+                <small class="field__error" data-error-for="email" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <small class="field__error" data-error-for="message" aria-live="polite"></small>
+              </div>
+
+              <button class="btn btn--primary" type="submit">Send Message</button>
+              <p class="form-note" id="formNote" aria-live="polite">Submitting opens your email app with your message.</p>
+            </form>
+
+            <div class="contact__info reveal" aria-label="Contact information">
+              <div class="info-card">
+                <p class="info-card__label">Email</p>
+                <a class="info-card__value" data-contact="email" href="mailto:mohasinkhan9825@gmail.com"
+                  ><span class="mono">mohasinkhan9825@gmail.com</span></a
+                >
+                <button class="btn btn--ghost btn--sm" type="button" data-copy="email">Copy</button>
+              </div>
+              <div class="info-card">
+                <p class="info-card__label">Phone</p>
+                <a class="info-card__value" data-contact="phone" href="tel:+0000000000"
+                  ><span class="mono">+917355609842</span></a
+                >
+                <button class="btn btn--ghost btn--sm" type="button" data-copy="phone">Copy</button>
+              </div>
+              <div class="info-card">
+                <p class="info-card__label">Location</p>
+                <p class="info-card__value" data-contact="location"><span class="mono">India</span></p>
+              </div>
+
+              <div class="contact__social" aria-label="Social links">
+                <a class="social-btn" href="#" data-social="github" aria-label="GitHub" rel="noreferrer">
+                  <span class="social-btn__dot" aria-hidden="true"></span><span>GitHub</span>
+                </a>
+                <a class="social-btn" href="#" data-social="linkedin" aria-label="LinkedIn" rel="noreferrer">
+                  <span class="social-btn__dot" aria-hidden="true"></span><span>LinkedIn</span>
+                </a>
+                <a class="social-btn" href="#" data-social="instagram" aria-label="Instagram" rel="noreferrer">
+                  <span class="social-btn__dot" aria-hidden="true"></span><span>Instagram</span>
+                </a>
+                <a class="social-btn" href="#" data-social="twitter" aria-label="Twitter/X" rel="noreferrer">
+                  <span class="social-btn__dot" aria-hidden="true"></span><span>Twitter/X</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo" aria-hidden="true">MK</div>
+          <div>
+            <p class="footer__name">Mohammad Mohasin Khan</p>
+            <p class="footer__role">Frontend Developer & DevOps Enthusiast</p>
+          </div>
+        </div>
+
+        <div class="footer__links" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer__social" aria-label="Footer social">
+          <a href="#" data-social="github" aria-label="GitHub" rel="noreferrer">GitHub</a>
+          <a href="#" data-social="linkedin" aria-label="LinkedIn" rel="noreferrer">LinkedIn</a>
+          <a href="#" data-social="twitter" aria-label="Twitter/X" rel="noreferrer">Twitter/X</a>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p class="footer__copy">© <span id="year"></span> Mohammad Mohasin Khan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z" />
+      </svg>
+    </button>
+
+    <!-- Toasts -->
+    <div class="toasts" id="toasts" aria-live="polite" aria-relevant="additions"></div>
+
+    <!-- Command palette -->
+    <div class="overlay" id="cmdkOverlay" hidden>
+      <div class="overlay__backdrop" data-close-overlay></div>
+      <div class="overlay__panel" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="cmdk">
+          <div class="cmdk__top">
+            <input
+              id="cmdkInput"
+              class="cmdk__input"
+              type="text"
+              inputmode="search"
+              autocomplete="off"
+              placeholder="Search sections, projects…"
+              aria-label="Search commands"
+            />
+            <div class="cmdk__hint"><span class="mono">Esc</span> to close</div>
+          </div>
+          <div class="cmdk__list" id="cmdkList" role="listbox" aria-label="Commands"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project case study modal -->
+    <div class="overlay" id="projectOverlay" hidden>
+      <div class="overlay__backdrop" data-close-overlay></div>
+      <div class="overlay__panel overlay__panel--lg" role="dialog" aria-modal="true" aria-label="Project case study">
+        <div class="modal">
+          <div class="modal__head">
+            <div>
+              <p class="modal__eyebrow mono" id="projectMeta">Case study</p>
+              <h3 class="modal__title" id="projectTitle">Project</h3>
+            </div>
+            <button class="icon-btn" type="button" aria-label="Close" data-close-overlay>
+              <svg class="icon-btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3 1.4 1.4z" />
+              </svg>
+            </button>
+          </div>
+          <div class="modal__body" id="projectBody"></div>
+          <div class="modal__foot">
+            <a class="btn btn--primary btn--sm" href="#" id="projectDemo" rel="noreferrer">Live Demo</a>
+            <a class="btn btn--ghost btn--sm" href="#" id="projectCode" rel="noreferrer">View Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resume viewer -->
+    <div class="overlay" id="resumeOverlay" hidden>
+      <div class="overlay__backdrop" data-close-overlay></div>
+      <div class="overlay__panel overlay__panel--lg" role="dialog" aria-modal="true" aria-label="Resume">
+        <div class="modal">
+          <div class="modal__head">
+            <div>
+              <p class="modal__eyebrow mono">Resume</p>
+              <h3 class="modal__title">Mohammad Mohasin Khan</h3>
+            </div>
+            <div class="modal__headActions">
+<a class="btn btn--ghost btn--sm" href="./assets/images/resume.jpeg" download>Download Resume</a>
+              <button class="icon-btn" type="button" aria-label="Close" data-close-overlay>
+                <svg class="icon-btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3 1.4 1.4z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="modal__body">
+            <img
+              class="resume-media"
+              src="./assets/images/resume.jpeg"
+              alt="Resume of Mohammad Mohasin Khan"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="form-note">
+              Tip: You can print this page to save as PDF.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script defer src="./script.js"></script>
+  </body>
+</html>
+
+
