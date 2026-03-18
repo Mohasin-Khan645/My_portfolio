@@ -338,7 +338,7 @@ body.is-touch #cursor-glow {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 60;
+  z-index: 90;
   padding: 10px 0;
   background: transparent;
   pointer-events: auto;
@@ -482,6 +482,15 @@ html[data-theme="light"] .nav__toggleLines::after {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+
+.nav__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 80;
 }
 
 .nav__links {
@@ -2114,6 +2123,86 @@ html[data-theme="light"] .cmdk__input {
   }
 }
 
+@media (max-width: 979px) {
+  .nav {
+    position: relative;
+    z-index: 95;
+  }
+
+  .nav__menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 12px;
+    background: linear-gradient(180deg, var(--cardTopSoft), var(--cardBotSoft));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 14px;
+    display: block;
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 90;
+    transition: opacity var(--t-med) var(--ease-out), transform var(--t-med) var(--ease-out);
+  }
+
+  .nav.is-open .nav__menu {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .nav__links {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 4px 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    text-align: left;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .nav__link:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav__actions {
+    width: 100%;
+    justify-content: stretch;
+    gap: 10px;
+  }
+
+  .nav__actions .icon-btn,
+  .nav__actions .btn {
+    flex: 1 1 0;
+    width: auto;
+  }
+
+  .nav__actions .btn.btn--ghost {
+    width: 100%;
+  }
+
+  #navBackdrop[hidden] {
+    display: none;
+  }
+
+  #navBackdrop {
+    display: block;
+  }
+}
+
 @media (min-width: 980px) {
   .nav {
     padding: 10px 14px;
@@ -2169,3 +2258,4 @@ html[data-theme="light"] .cmdk__input {
     display: none !important;
   }
 }
+
