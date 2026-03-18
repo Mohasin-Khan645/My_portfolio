@@ -98,6 +98,10 @@
           <span class="nav__logoText">Mohasin Khan</span>
         </a>
 
+        <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+          <span class="nav__toggleLines" aria-hidden="true"></span>
+        </button>
+
         <div class="nav__menu" id="navMenu">
           <div class="nav__links" aria-label="Sections">
             <a class="nav__link is-active" href="#home">Home</a>
@@ -128,6 +132,8 @@
 <a class="btn btn--ghost" href="javascript:void(0)" data-open-resume>Resume</a>
           </div>
         </div>
+
+        <div class="nav__backdrop" id="navBackdrop" hidden></div>
       </nav>
     </header>
 
