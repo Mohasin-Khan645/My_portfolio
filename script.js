@@ -8,7 +8,7 @@
 
   if (isTouchLike) document.body.classList.add("is-touch");
 
-  // ---- Profile config (paste your real links once) ----
+  // ---- Profile config 
   const PROFILE = {
     contact: {
       email: "mohasinkhan9825@gmail.com",
@@ -49,7 +49,7 @@
     el.textContent = v;
   };
 
-  // ---- Modal helpers (focus trap, ESC close) ----
+  // ---- Modal helpers
   const focusableSel =
     'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -106,7 +106,7 @@
     true
   );
 
-  // Close overlay via backdrop/close buttons
+  // close buttons
   $$("[data-close-overlay]").forEach((el) => {
     el.addEventListener("click", closeOverlay);
   });
@@ -150,11 +150,11 @@
     window.setTimeout(hideLoader, prefersReducedMotion ? 120 : 520);
   });
 
-  // ---- Year ----
+  
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // ---- Theme toggle (dark/light) ----
+  // ---- Theme (dark/light) ----
   const root = document.documentElement;
   const themeToggle = $("#themeToggle");
   const THEME_KEY = "mk_portfolio_theme";
@@ -177,15 +177,14 @@
     localStorage.setItem(THEME_KEY, next);
   });
 
-  // ---- Apply socials/contact/projects from PROFILE ----
-  // Socials (rail + contact + footer all use [data-social])
+  // ---- Apply socials/contact/projects from PROFILE 
   $$("[data-social]").forEach((el) => {
     const key = el.getAttribute("data-social") || "";
     const url = PROFILE.socials[key];
     safeSetHref(el, url);
   });
 
-  // Contact info (email/phone/location)
+  // Contact info 
   const emailA = $("[data-contact='email']");
   if (emailA instanceof HTMLAnchorElement && PROFILE.contact.email) {
     const em = PROFILE.contact.email.trim();
@@ -205,7 +204,7 @@
   const locEl = $("[data-contact='location'] .mono") ?? $("[data-contact='location']");
   if (locEl) setText(locEl, PROFILE.contact.location);
 
-  // Projects (buttons use [data-project-link="key.type"])
+  
   $$("[data-project-link]").forEach((a) => {
     const token = a.getAttribute("data-project-link") || "";
     const [key, type] = token.split(".");
@@ -213,7 +212,7 @@
     safeSetHref(a, url);
   });
 
-  // ---- Copy to clipboard (email/phone) ----
+  
   const copyText = async (text) => {
     const t = String(text || "").trim();
     if (!t) return false;
@@ -254,7 +253,7 @@
     });
   });
 
-  // ---- Resume viewer modal ----
+  // ---- Resume viewer
   const resumeOverlay = $("#resumeOverlay");
   $$("[data-open-resume]").forEach((a) => {
     a.addEventListener("click", (e) => {
@@ -263,7 +262,7 @@
     });
   });
 
-  // ---- Project case studies modal ----
+  // ---- Project case studies ----
   const projectOverlay = $("#projectOverlay");
   const projectTitle = $("#projectTitle");
   const projectMeta = $("#projectMeta");
@@ -376,7 +375,7 @@
     });
   });
 
-  // Clicking anywhere on project card (except links/buttons) opens case study
+  // project cards
   $$("[data-project-key]").forEach((card) => {
     card.addEventListener("click", (e) => {
       const t = e.target;
@@ -401,7 +400,7 @@
     });
   });
 
-  // ---- Command palette (Ctrl/⌘ K) ----
+  
   const cmdkOverlay = $("#cmdkOverlay");
   const cmdkInput = $("#cmdkInput");
   const cmdkList = $("#cmdkList");
@@ -503,7 +502,7 @@
     }
   });
 
-  // ---- GitHub stats (public API) ----
+  // ---- GitHub stats
   const ghRoot = $("#githubStats");
   const ghFollowers = $("[data-gh='followers']");
   const ghRepos = $("[data-gh='repos']");
@@ -512,7 +511,7 @@
   const parseGitHubUsername = (url) => {
     const u = String(url || "").trim();
     if (!u) return "";
-    // Accept "username" too
+    
     if (!u.includes("/")) return u.replace(/^@/, "");
     try {
       const parsed = new URL(u);
@@ -560,7 +559,7 @@
       if (ghRepos) ghRepos.textContent = String(publicRepos);
       if (ghStars) ghStars.textContent = String(stars);
     } catch (err) {
-      // Keep placeholders but explain via toast once.
+      
       toast("GitHub stats", "Couldn’t load GitHub stats yet. Add your GitHub URL in PROFILE.socials.github.");
     } finally {
       ghRoot.classList.remove("is-loading");
@@ -569,13 +568,13 @@
 
   loadGitHubStats();
 
-  // ---- Profile photo (fade-in with fallback) ----
+  // ---- Profile photo
   const profileImg = $(".profile__img");
   const profileInner = $(".profile__inner");
 
   const markProfileLoaded = () => profileInner?.classList.add("is-loaded");
   const markProfileFailed = () => {
-    // Keep initials visible if the image isn't available.
+    
     profileImg?.setAttribute("hidden", "true");
   };
 
@@ -588,7 +587,7 @@
     }
   }
 
-  // ---- Cursor glow (GPU-friendly via CSS vars) ----
+  // ---- Cursor glow 
   if (!prefersReducedMotion && !isTouchLike) {
     const glow = $("#cursor-glow");
     if (glow) {
@@ -624,12 +623,50 @@
     }
   }
 
-  // ---- Navbar: blur on scroll, active link ----
+  // ---- Navbar: 
   const nav = $(".nav");
   const navMenu = $("#navMenu");
   const navLinks = $$(".nav__link", navMenu ?? document);
+  const navToggle = $("#navToggle");
+  const navBackdrop = $("#navBackdrop");
 
-  // ---- Scroll progress + nav scrolled state + back-to-top ----
+  const setNavOpen = (open) => {
+    nav?.classList.toggle("is-open", open);
+    navToggle?.setAttribute("aria-expanded", String(open));
+    navMenu?.setAttribute("aria-hidden", String(!open));
+    navBackdrop?.toggleAttribute("hidden", !open);
+  };
+
+  if (window.innerWidth < 980) {
+    setNavOpen(false);
+  }
+
+  navToggle?.addEventListener("click", () => {
+    const isOpen = nav?.classList.contains("is-open");
+    setNavOpen(!isOpen);
+  });
+
+  navBackdrop?.addEventListener("click", () => setNavOpen(false));
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => setNavOpen(false));
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!nav?.classList.contains("is-open")) return;
+    if (nav.contains(e.target)) return;
+    setNavOpen(false);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setNavOpen(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 980) setNavOpen(false);
+  });
+
+  // ---- Scroll progress 
   const progressBar = $("#scroll-progress-bar");
   const toTop = $("#toTop");
 
@@ -653,7 +690,7 @@
     window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
   });
 
-  // ---- Active section highlight (IntersectionObserver) ----
+  // ---- Active section highlight
   const sectionIds = ["home", "about", "skills", "experience", "projects", "services", "achievements", "contact"];
   const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
@@ -667,7 +704,7 @@
   if ("IntersectionObserver" in window) {
     const sectionObserver = new IntersectionObserver(
       (entries) => {
-        // Pick the most visible entry in view for stable highlighting.
+        
         const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0));
         if (!visible.length) return;
         const id = visible[0].target.getAttribute("id");
@@ -679,7 +716,7 @@
     sections.forEach((s) => sectionObserver.observe(s));
   }
 
-  // ---- Reveal animations + skill meters ----
+  
   const revealEls = $$(".reveal");
   const skillCards = $$("[data-skill]");
 
@@ -742,7 +779,7 @@
     counters.forEach(animateCounter);
   }
 
-  // ---- Typing animation (rotating titles) ----
+  // ---- Typing animation 
   const typingEl = $("#typing");
   const titles = ["Frontend Developer", "DevOps Enthusiast", "Web Developer", "Tech Learner"];
 
@@ -825,7 +862,7 @@
     });
   });
 
-  // ---- Contact form validation + email handoff (mailto) ----
+  // ---- Contact form 
   const form = $("#contactForm");
   const formNote = $("#formNote");
 
@@ -913,7 +950,7 @@
     form.reset();
   });
 
-  // ---- Particles canvas (lightweight, responsive) ----
+  // ---- Particles 
   const canvas = $("#particles");
   if (canvas instanceof HTMLCanvasElement && !prefersReducedMotion) {
     const ctx = canvas.getContext("2d");
@@ -956,7 +993,7 @@
         raf = 0;
         ctx.clearRect(0, 0, w, h);
 
-        // Soft gradient wash for depth.
+        // Soft gradient 
         const g = ctx.createRadialGradient(w * 0.2, h * 0.1, 40, w * 0.55, h * 0.7, Math.max(w, h));
         g.addColorStop(0, themeMode === "light" ? "rgba(0, 140, 255, 0.06)" : "rgba(0, 198, 255, 0.05)");
         g.addColorStop(0.5, themeMode === "light" ? "rgba(120, 80, 255, 0.05)" : "rgba(139, 92, 246, 0.04)");
