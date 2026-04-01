@@ -1,0 +1,7 @@
+Replace this file with your real resume (PDF recommended).
+
+Suggested filename:
+- Mohammad_Mohasin_Khan_Resume.pdf
+
+Then update the two resume links in:
+- `portfolio/index.html` (navbar + hero button)
