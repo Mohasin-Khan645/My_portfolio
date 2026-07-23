@@ -339,7 +339,31 @@
   ],
       stack: ["WebRTC", "Sockt.io", "Node.js", "React", "MongoDB", "JWT Auth"],
     },
-  };
+    note_app: {
+      meta: "Frontend • Backend",
+      title: "Note_App",
+      problem: "Users need a secure and modern note-taking application that allows them to organize notes efficiently while providing authentication, intelligent assistance, search capabilities, and an interactive user experience.",
+      approach: [
+        "Developed a full-stack notes management application using React and Node.js.",
+        "Implemented secure user authentication with JWT and encrypted password storage.",
+        "Integrated MongoDB Atlas for cloud-based data storage.", 
+        "Built RESTful APIs using Express.js for note and authentication management.",
+        "Added AI-powered assistant integration to help users interact with their notes.",
+        "Designed a modern dashboard with timeline, analytics, search, and note categorization.",
+        "Managed authentication state using React Context API.",
+        "Configured environment-based API management for local and production deployments.",
+        "Deployed the backend on Render and the frontend on Vercel.",
+      ],
+      results: ["Secure cloud-based note management system",
+                "JWT-protected authentication and authorization",
+                "Fast CRUD operations with MongoDB Atlas",
+                "Responsive modern React UI",
+                "AI-assisted productivity features",
+                "Improved understanding of REST API architecture, authentication, deployment, and cloud databases",
+      ],
+      stack: ["React", "Node.js", "Express.js", "MongoDB", "JWT Auth", "AI Integration", "Vercel Deployment", "Render Deployment"],
+    },
+  }
 
   const renderCaseStudy = (key) => {
     const cs = CASE_STUDIES[key];
